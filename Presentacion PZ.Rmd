@@ -28,11 +28,17 @@ names(dataFiltered) <- newNames
 
 ```
 
-## Introducción
+## Introducción {.build}
 
-"El cuestionario" corresponde a una encuesta realizada a todos los paises del mundo la cual documenta estadisticas relacionadas con eneergia
+- El cambio climatico ha impulsado la necesidad de convertir la forma en que se genera electricidad a nivel mundial.
+- Conversión de formas contaminantes a energias renovables es clave 
+- "El cuestionario" corresponde a una encuesta realizada a todos los paises del mundo la cual documenta estadisticas relacionadas con energia
 
 ![](https://paris21.org/sites/default/files/inline-images/UNSD_0.png)
+
+![](https://lectormx.com/wp-content/uploads/2016/10/img_4126.jpg)
+
+![](https://revistardenergia.com/wp-content/uploads/2019/11/IMG_20191116_065008.jpg)
 ```{r}
 
 ```
@@ -41,7 +47,7 @@ names(dataFiltered) <- newNames
 
 ## Sudamerica
 
-- Cosumen y generan electricidad a nivel mundial tanto
+- Consumen y generan electricidad a nivel mundial tanto
 (CITA)
 
 10 paises componen el continente sudamericano
@@ -51,7 +57,7 @@ names(dataFiltered) <- newNames
 
 **Objetivo de investigación**
 
-Identificar en que momento se han generado quiebres con respecto a la producción energetica de los distintos paises de sudamerica
+Determinar los paises sudamericanos lideres en producción de electricidad según forma de generación entre los años 1991 y 2014
 
 ## Metodología
 
@@ -59,7 +65,14 @@ El primer desafio fue filtrar la información relevante
 
 ## Resultados - Preprocesamiento
 
-La base de datos cuenta con mas de un millón de datos para los distintos paises a escala mundial, es por ello que se realizo un filtro, enfocando asi la investigación en paises sudamericanos (10) especificamente en temas relacionados a Electricidad, dejando asi un total de `r count(dataFiltered)` datos.
+<div style="float:left; width: 60%;">
+La base de datos cuenta con mas de un millón de datos para los distintos paises a escala mundial, es por ello que se realizo un filtro, enfocando asi la investigación en paises sudamericanos (13) especificamente en temas relacionados a Electricidad, dejando asi un total de `r count(dataFiltered)` datos.
+</div>
+<div style="float:right; width: 40%;">
+```{r Filtro, out.height="450px", out.width="300px"}
+knitr::include_graphics("imagenMyM.png")
+```
+</div>
 
 
 ## Resultados - Producción Total
