@@ -1,0 +1,168 @@
+---
+title: "Analisis sobre producción electrica en Sudamerica"
+author: "Paulo Zepeda"
+date: "10/4/2020"
+output:
+  ioslides_presentation: default
+  beamer_presentation: default
+  slidy_presentation: default
+incremental: yes
+---
+
+```{r setup,echo= FALSE, warning=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = F)
+library(tidyverse)
+library(gridExtra)
+library(ggpubr)
+library(knitr)
+library(data.table)
+```
+
+```{r preeliminar, echo=FALSE, eval=TRUE}
+
+data <- read.csv(file = "Sudamerica2.csv")
+dataFiltered <- select(data, -c(quantity_footnotes))
+dataFiltered <- select(dataFiltered, -1)
+newNames <- c("country", "c_transaction", "year", "unit", "quantity", "category")
+names(dataFiltered) <- newNames
+
+```
+
+## Introducción
+
+"El cuestionario" corresponde a una encuesta realizada a todos los paises del mundo la cual documenta estadisticas relacionadas con eneergia
+
+![](https://paris21.org/sites/default/files/inline-images/UNSD_0.png)
+```{r}
+
+```
+
+
+
+## Sudamerica
+
+- Cosumen y generan electricidad a nivel mundial tanto
+(CITA)
+
+10 paises componen el continente sudamericano
+  INLINE
+- Bullet 2
+- Bullet 3
+
+**Objetivo de investigación**
+
+Identificar en que momento se han generado quiebres con respecto a la producción energetica de los distintos paises de sudamerica
+
+## Metodología
+
+El primer desafio fue filtrar la información relevante
+
+## Resultados - Preprocesamiento
+
+La base de datos cuenta con mas de un millón de datos para los distintos paises a escala mundial, es por ello que se realizo un filtro, enfocando asi la investigación en paises sudamericanos (10) especificamente en temas relacionados a Electricidad, dejando asi un total de `r count(dataFiltered)` datos.
+
+
+## Resultados - Producción Total
+
+
+```{r conf Figura 1, eval=T, echo=F, message=FALSE, warning=FALSE}
+
+totalMainA <- dataFiltered %>% filter(c_transaction == "Electricity - total production, main activity")
+plotTotalMainA <- ggplot(data=totalMainA, aes(y=quantity, x=year, color=country)) + 
+  geom_line(size = 2) + ggtitle("Total Main activity") + facet_wrap(~"country", scale="free") + scale_color_manual(values = c("Chile"="#00f91d", 
+                                                                                                             "Argentina" = "#00eef9", "Bolivia (Plur. State of)" = "#bebada", "Brazil"="#fb8072", 
+                                                                                                             "Colombia" = "#fdb462", "Ecuador" = "#b3de69","Guyana"="#fccde5", "Paraguay" = "#d9d9d9", 
+                                                                                                             "Peru" = "#bc80bd", "Suriname"="#ccebc5", "Trinidad and Tobago" = "black", "Uruguay" = "#ffed6f", 
+                                                                                                             "Venezuela (Bolivar. Rep.)" = "#80b1d3")) + 
+  theme(legend.position="top")
+plotTotalMainA
+
+```
+
+
+## Resultados - Producción total distintas fuentes 
+
+
+```{r conf Figura 2, eval=T, echo=F, message=FALSE, warning=FALSE}
+
+#Wind
+
+totalWind<- dataFiltered %>% filter(c_transaction == "Electricity - total wind production")
+plotTotalWind <- ggplot(data=totalWind, aes(y=quantity, x=year, color=country)) + 
+  geom_line(size = 2) + ggtitle("Total Wind") + facet_wrap(~"country", scale="free") + scale_color_manual(values = c("Chile"="#00f91d", 
+                                                                                                             "Argentina" = "#00eef9", "Bolivia (Plur. State of)" = "#bebada", "Brazil"="#fb8072", 
+                                                                                                             "Colombia" = "#fdb462", "Ecuador" = "#b3de69","Guyana"="#fccde5", "Paraguay" = "#d9d9d9", 
+                                                                                                             "Peru" = "#bc80bd", "Suriname"="#ccebc5", "Trinidad and Tobago" = "black", "Uruguay" = "#ffed6f", 
+                                                                                                             "Venezuela (Bolivar. Rep.)" = "#80b1d3")) +
+  theme(legend.position="top")
+
+WindMA<- dataFiltered %>% filter(c_transaction == "Wind - Main activity")
+plotWindMA <- ggplot(data=totalWind, aes(y=quantity, x=year, color=country)) + 
+  geom_line(size = 2) + ggtitle("Wind Main activity") + facet_wrap(~"country", scale="free") + scale_color_manual(values = c("Chile"="#00f91d", 
+                                                                                                             "Argentina" = "#00eef9", "Bolivia (Plur. State of)" = "#bebada", "Brazil"="#fb8072", 
+                                                                                                             "Colombia" = "#fdb462", "Ecuador" = "#b3de69","Guyana"="#fccde5", "Paraguay" = "#d9d9d9", 
+                                                                                                             "Peru" = "#bc80bd", "Suriname"="#ccebc5", "Trinidad and Tobago" = "black", "Uruguay" = "#ffed6f", 
+                                                                                                             "Venezuela (Bolivar. Rep.)" = "#80b1d3")) + 
+  theme(legend.position="top")
+
+#Solar
+
+totalSolar<- dataFiltered %>% filter(c_transaction == "Electricity - total solar production")
+plotTotalSolar <- ggplot(data=totalSolar, aes(y=quantity, x=year, color=country)) + 
+  geom_line(size = 2) + ggtitle("Total Solar") + facet_wrap(~"country", scale="free") + scale_color_manual(values = c("Chile"="#00f91d", 
+                                                                                                             "Argentina" = "#00eef9", "Bolivia (Plur. State of)" = "#bebada", "Brazil"="#fb8072", 
+                                                                                                             "Colombia" = "#fdb462", "Ecuador" = "#b3de69","Guyana"="#fccde5", "Paraguay" = "#d9d9d9", 
+                                                                                                             "Peru" = "#bc80bd", "Suriname"="#ccebc5", "Trinidad and Tobago" = "black", "Uruguay" = "#ffed6f", 
+                                                                                                             "Venezuela (Bolivar. Rep.)" = "#80b1d3")) +
+  theme(legend.position="top")
+
+SolarPV<- dataFiltered %>% filter(c_transaction == "Solar photovoltaic – Main activity")
+plotSolarPV <- ggplot(data=SolarPV, aes(y=quantity, x=year, color=country)) + 
+  geom_line() + ggtitle("Solar photovoltaic") + facet_wrap(~"country", scale="free") + 
+  theme(legend.position="top")
+
+SolarT<- dataFiltered %>% filter(c_transaction == "Solar thermal – Main activity")
+plotSolarT <- ggplot(data=SolarT, aes(y=quantity, x=year, color=country)) + 
+  geom_line() + ggtitle("Solar Thermal") + facet_wrap(~"country", scale="free") + 
+  theme(legend.position="top")
+
+#Hydro
+
+totalHydro<- dataFiltered %>% filter(c_transaction == "Electricity - total hydro production")
+plotTotalHydro <- ggplot(data=totalHydro, aes(y=quantity, x=year, color=country)) + 
+  geom_line(size = 2) + ggtitle("Total Hydro") + facet_wrap(~"country", scale="free") + scale_color_manual(values = c("Chile"="#00f91d", 
+                                                                                                             "Argentina" = "#00eef9", "Bolivia (Plur. State of)" = "#bebada", "Brazil"="#fb8072", 
+                                                                                                             "Colombia" = "#fdb462", "Ecuador" = "#b3de69","Guyana"="#fccde5", "Paraguay" = "#d9d9d9", 
+                                                                                                             "Peru" = "#bc80bd", "Suriname"="#ccebc5", "Trinidad and Tobago" = "black", "Uruguay" = "#ffed6f", 
+                                                                                                             "Venezuela (Bolivar. Rep.)" = "#80b1d3")) +
+  theme(legend.position="top")
+
+#Thermal
+
+totalThermal<- dataFiltered %>% filter(c_transaction == "Electricity - total thermal production")
+plotTotalThermal <- ggplot(data=totalThermal, aes(y=quantity, x=year, color=country)) + 
+  geom_line(size = 2) + ggtitle("Total Thermal") + facet_wrap(~"country", scale="free") + scale_color_manual(values = c("Chile"="#00f91d", 
+                                                                                                             "Argentina" = "#00eef9", "Bolivia (Plur. State of)" = "#bebada", "Brazil"="#fb8072", 
+                                                                                                             "Colombia" = "#fdb462", "Ecuador" = "#b3de69","Guyana"="#fccde5", "Paraguay" = "#d9d9d9", 
+                                                                                                             "Peru" = "#bc80bd", "Suriname"="#ccebc5", "Trinidad and Tobago" = "black", "Uruguay" = "#ffed6f", 
+                                                                                                             "Venezuela (Bolivar. Rep.)" = "#80b1d3")) +
+  theme(legend.position="top")
+
+Figure1 <- ggarrange(plotTotalHydro, plotTotalSolar,plotTotalWind, plotTotalThermal + rremove("x.text"), 
+          labels = c("A", "B", "C","D"), common.legend = T, legend = "bottom",
+          ncol = 2, nrow = 2)
+Figure1
+
+```
+
+```{r Figura 1, echo=F, eval=FALSE}
+plotTotalMainA
+```
+
+## Discusión
+
+## Conclusión
+
+## Bibliografía
+
+
