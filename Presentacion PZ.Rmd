@@ -1,12 +1,10 @@
 ---
-title: "Analisis sobre producción electrica en Sudamerica"
+title: "Análisis sobre producción electrica en Sudamerica"
 author: "Paulo Zepeda"
 date: "10/4/2020"
 output:
   ioslides_presentation: default
-  beamer_presentation: default
-  slidy_presentation: default
-incremental: yes
+incremental: true
 ---
 
 ```{r setup,echo= FALSE, warning=FALSE, message=FALSE}
@@ -16,6 +14,7 @@ library(gridExtra)
 library(ggpubr)
 library(knitr)
 library(data.table)
+library(kableExtra)
 ```
 
 ```{r preeliminar, echo=FALSE, eval=TRUE}
@@ -30,49 +29,66 @@ names(dataFiltered) <- newNames
 
 ## Introducción {.build}
 
-- El cambio climatico ha impulsado la necesidad de convertir la forma en que se genera electricidad a nivel mundial.
-- Conversión de formas contaminantes a energias renovables es clave 
-- "El cuestionario" corresponde a una encuesta realizada a todos los paises del mundo la cual documenta estadisticas relacionadas con energia
+- El cambio climático ha impulsado la necesidad de cambiar la forma en que se genera electricidad a nivel mundial.
+- Pasar de formas contaminantes a energías renovables es clave 
+- "El cuestionario" corresponde a una encuesta realizada a todos los países del mundo la cual documenta estadísticas relacionadas con energía
 
-![](https://paris21.org/sites/default/files/inline-images/UNSD_0.png)
-
-![](https://lectormx.com/wp-content/uploads/2016/10/img_4126.jpg)
-
-![](https://revistardenergia.com/wp-content/uploads/2019/11/IMG_20191116_065008.jpg)
-```{r}
-
+<div style="float:left; width: 30%;">
+```{r UNDS, out.height="200px", out.width="200px"}
+knitr::include_graphics("https://paris21.org/sites/default/files/inline-images/UNSD_0.png")
 ```
+</div>
+<div style="float:left   ; width: 40%;">
+```{r Contaminación, out.height="200px", out.width="300px"}
+knitr::include_graphics("https://lectormx.com/wp-content/uploads/2016/10/img_4126.jpg")
+```
+</div>
+<div style="float:right; width: 30%;">
+```{r energia limpia, out.height="200px", out.width="200px"}
+knitr::include_graphics("https://revistardenergia.com/wp-content/uploads/2019/11/IMG_20191116_065008.jpg")
+```
+</div>
 
 
+## Sudamerica {.build}
 
-## Sudamerica
+- Buen modelo para comparar distintos escenarios de producción
 
-- Consumen y generan electricidad a nivel mundial tanto
-(CITA)
-
-10 paises componen el continente sudamericano
-  INLINE
-- Bullet 2
-- Bullet 3
+- Países con distintos tamaños poblacionales y de economías diversas
 
 **Objetivo de investigación**
 
-Determinar los paises sudamericanos lideres en producción de electricidad según forma de generación entre los años 1991 y 2014
+- Determinar los países sudamericanos lideres en producción de electricidad según forma de generación entre los años 1991 y 2014
+
+- Generar un modelo lineal para proyectar la producción de energía años 2015-2019 usando como variable ademas el PIB de los distintos países
 
 ## Metodología
 
-El primer desafio fue filtrar la información relevante
+- Filtro de base de datos de la UNDS
+- Graficar producción total mediante distintas formas de generación de electricidad: Eolica, Solar, Termica, Hidrica y mediante combustión
+- Modelar proyección a´ños 2015-2020 usando como variable adicional el PIB (CEPAL)
 
 ## Resultados - Preprocesamiento
 
 <div style="float:left; width: 60%;">
-La base de datos cuenta con mas de un millón de datos para los distintos paises a escala mundial, es por ello que se realizo un filtro, enfocando asi la investigación en paises sudamericanos (13) especificamente en temas relacionados a Electricidad, dejando asi un total de `r count(dataFiltered)` datos.
-</div>
+La base de datos cuenta con más de un millón de datos para los distintos países a escala mundial, es por ello que se realizó un filtro, enfocando así la investigación en países sudamericanos (13) específicamente en temas relacionados a Electricidad, dejando así un total de `r count(dataFiltered)` datos.</div>
+
 <div style="float:right; width: 40%;">
 ```{r Filtro, out.height="450px", out.width="300px"}
 knitr::include_graphics("imagenMyM.png")
 ```
 </div>
+
+## Resultados - Tabla Producción Total
+
+```{r Tabla 1, echo=F, warning= F, message=F, eval=T}
+totalMainA <- dataFiltered %>% filter(c_transaction == "Electricity - total production, main activity")
+Tabla <- totalMainA %>% group_by(country) %>% summarise_at("quantity", 
+    .funs = list(Mean = mean, SD = sd)) %>% arrange(desc(Mean))
+
+kable(Tabla, caption="Producción Total como actividad principal por paises ", digits = 2) %>% kable_styling(bootstrap_options = c("striped", 
+    "hover", "condensed"))
+```
 
 
 ## Resultados - Producción Total
@@ -92,11 +108,31 @@ plotTotalMainA
 
 ```
 
+## Resultados - Produccion de combustion 
+
+```{r conf Figura 2, eval=T, echo=F, message=FALSE, warning=FALSE}
+
+#Fuel
+
+totalFuel<- dataFiltered %>% filter(c_transaction == "From combustible fuels – Main activity – Electricity plants")
+plotTotalFuel <- ggplot(data=totalFuel, aes(y=quantity, x=year, color=country)) + 
+  geom_line() + ggtitle("Total Fuel") + facet_wrap(~"country", scale="free") + scale_color_manual(values = c("Chile"="#00f91d", 
+                                                                                                             "Argentina" = "#00eef9", "Bolivia (Plur. State of)" = "#bebada", "Brazil"="#fb8072", 
+                                                                                                             "Colombia" = "#fdb462", "Ecuador" = "#b3de69","Guyana"="#fccde5", "Paraguay" = "#d9d9d9", 
+                                                                                                             "Peru" = "#bc80bd", "Suriname"="#ccebc5", "Trinidad and Tobago" = "black", "Uruguay" = "#ffed6f", 
+                                                                                                             "Venezuela (Bolivar. Rep.)" = "#80b1d3")) +
+  theme(legend.position="top")
+
+plotTotalFuel
+
+
+```
+
 
 ## Resultados - Producción total distintas fuentes 
 
 
-```{r conf Figura 2, eval=T, echo=F, message=FALSE, warning=FALSE}
+```{r conf Figura 3, eval=T, echo=F, message=FALSE, warning=FALSE}
 
 #Wind
 
@@ -172,9 +208,39 @@ Figure1
 plotTotalMainA
 ```
 
+## Resultados - Modelo propuesto
+
+Modelo lineal para estimar la producción total de electricidad ademas de la produccion mediante metodos especificos como solar, eolica, hidrica y termal.
+
+Siguiente ejemplo es un modelo inicial para produción total Solar para Chile estimando año 2015 
+
+```{r, echo=TRUE, eval=FALSE}
+
+plot(totalSolarChile$year,totalSolarChile$quantity)
+modeloSolarChile <- lm(quantity~year, data = totalSolarChile)
+abline(modeloSolarChile)
+summary(modeloSolarChile)
+names(modeloSolarChile)
+modeloSolarChile$fitted
+fitted(modeloSolarChile)
+plot(totalSolarChile$quantity, modeloSolarChile$fitted)
+predict(modeloSolarChile,list(year=2015))
+
+
+
+```
+Predice **493** para el año **2015**
+
 ## Discusión
 
+- Los mayores productores de electricidad en la región son Brasil, Venezuela y Argentina.
+- Algunas tecnologías como la producción solar o mediante viento aparecen como factor relevante bien avanzado los 2000 y solo en algunos paises.
+- En el caso de la producción de energia mediant radiación solar Chile presenta un liderazgo notable con un claro aumento desde 2013
+
 ## Conclusión
+
+En terminos de producción total de energía electrica sudamrica tiene claros lideres, Brasil, Venezuela y Argentina. Pero con el cambio a la producción con energias renovables aparecen nuevos lideres como Chile en terminos de generación Solar
+
 
 ## Bibliografía
 
