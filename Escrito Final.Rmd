@@ -2,12 +2,13 @@
 title: "Analisis sobre producción electrica en Sudamerica"
 author: "Paulo Zepeda"
 date: "10/4/2020"
-output: 
-  bookdown::html_document2:
-     fig_caption: yes
+output:
+  pdf_document: default
+  bookdown::pdf_document2:
+    fig_caption: yes
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, warning=T}
 knitr::opts_chunk$set(echo = F)
 options("kableExtra.html.bsTable" = T)
 library(tidyverse)
@@ -52,7 +53,7 @@ dataFP <-right_join(x = Pob, y= dataFiltered, by=c("country","year"))
 
 ## Introducción
 
-- El cambio climático ha impulsado la necesidad de cambiar la forma en que se genera electricidad a nivel mundial.
+El cambio climático ha impulsado la necesidad de cambiar la forma en que se genera electricidad a nivel mundial. Las formas contaminantes de producción como 
 - Pasar de formas contaminantes a energías renovables es clave 
 - "El Cuestionario" corresponde a una encuesta realizada a todos los países del mundo la cual documenta estadísticas relacionadas con energía
 
@@ -92,13 +93,13 @@ Para poder comparar las distintas industrias de los paises sudamericanos, se agr
 **Procesamiento bases de datos**
 
 <div style="float:left; width: 40%;">
-La base de datos de la UNDS cuenta con más de un millón de datos para los distintos países a escala mundial, es por ello que se realizó un filtro, enfocando así la investigación en países sudamericanos (13) específicamente en temas relacionados a Electricidad, dejando así un total de `r count(dataFiltered)` datos. Los resultados del filtro de los datos se exponen en la Figura \@ref{fig: Fig1}
+La base de datos de la UNDS cuenta con más de un millón de datos para los distintos países a escala mundial, es por ello que se realizó un filtro, enfocando así la investigación en países sudamericanos (13) específicamente en temas relacionados a Electricidad, dejando así un total de `r count(dataFiltered)` datos. Los resultados del filtro de los datos se exponen en la Figura \@ref(fig:esquema)
 </div>
 <div style="float:center; width: 20%;">
 </div>
 <div style="float:right; width: 40%;">
-```{r Fig1, fig.cap="Esquema filtro de datos", out.height="250px", out.width="300px"}
-knitr::include_graphics("imagenMyM.png")
+```{r esquema, fig.cap="Esquema filtro de datos", out.height="250px", out.width="300px"}
+knitr::include_graphics("ImagenMyM.png")
 ```
 </div>
 
@@ -106,7 +107,7 @@ knitr::include_graphics("imagenMyM.png")
 **Producción Total**
 </div>
 <div style="float:left; width: 100%;">
-El primer análisis exploratorio consistio en promediar la producción total de energia entre 1990 y 2014 para cada pais, los datos se exponen en la tabla \@ref{tab:Tabla1}
+El primer análisis exploratorio consistio en promediar la producción total de energia entre 1990 y 2014 para cada pais, los datos se exponen en la tabla \@ref(tab:Tabla1)
 </div>
 
 ```{r confección Tabla 1, echo=F, warning= F, message=F, eval=T}
@@ -121,7 +122,7 @@ kable(Tabla, caption="Producción Total como actividad principal por paises ", d
     "hover", "condensed"))
 ```
 
-Esto se expone en la Figura \@ref{fig:Figura2} que contiene la producción total de electricidad por paises
+Esto se expone en la Figura \@ref(fig:Figura2) que contiene la producción total de electricidad por paises
 
 ```{r Figura2, fig.cap= "Producción total de electricidad", eval=T, echo=F, message=FALSE, warning=FALSE, fig.align='center'}
 
