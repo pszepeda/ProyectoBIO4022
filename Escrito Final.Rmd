@@ -6,10 +6,13 @@ output:
   pdf_document: default
   bookdown::pdf_document2:
     fig_caption: yes
+    extra_dependencies: ["float"]
+bibliography: Bibliografia.bib
 ---
 
-```{r setup, include=FALSE, warning=T}
+```{r setup, include=FALSE, warning=F}
 knitr::opts_chunk$set(echo = F)
+knitr::opts_chunk$set(fig.pos = "H", out.extra = "")
 options("kableExtra.html.bsTable" = T)
 library(tidyverse)
 library(gridExtra)
@@ -51,28 +54,26 @@ dataFP <-right_join(x = Pob, y= dataFiltered, by=c("country","year"))
 ```
 
 
-## Introducción
+# Introducción
 
-El cambio climático ha impulsado la necesidad de cambiar la forma en que se genera electricidad a nivel mundial. Las formas contaminantes de producción como 
-- Pasar de formas contaminantes a energías renovables es clave 
-- "El Cuestionario" corresponde a una encuesta realizada a todos los países del mundo la cual documenta estadísticas relacionadas con energía
+El cambio climático ha impulsado la necesidad de cambiar la forma en que se genera electricidad a nivel mundial. Las formas contaminantes de producción como mediante la combustión de material fosil (e.g. petroleo) esta dentro de las principales causas del aumento exponencial de los gases invernadero en el siglo pasado. En este contexto, el cambio a formas de generación mas "verdes" es una de las estrategias claves en la lucha contra el cambio climatico. Dentro de estas formas encontramos las energias renovables, definidas como la energia obtenida desde flujos persistentes y repetivivos que ocurren en amnbientes locales [@twidell2015renewable]. Algunas de ellas son la energía solar, ecolica (que utiliza el viento como fuente de energía) e hidrica.
 
-- Buen modelo para comparar distintos escenarios de producción
+Para poder abordar esta problematica la información es vital, es por ello que el trabajo relizado por la división de estadistica de las Naciones Unidas (UNDS por sus siglas en inglés) surge como una buena herramienta para monitorear como los distintos paises se relacionan con la energía. La UNDS, todos los años genera un base de datos donde registra distintas transacciones energeticas generadas por los paises del mundo. Entre estas transacciones podemos encontrar, generación, almacenamiento, importacion, exportacion, de distintas formas de energia como solar, mareomotriz, termoelectrica, entre otras. Esta recopilación se le denomina "El cuestionario" [@Globalenergytrade].
 
-- Países con distintos tamaños poblacionales y de economías diversas
+Si buscamos realizar un analis exploratorio de esta base de datos un buen punto de partida es acotar la información. Un buen objeto de estudio es Sudamerica, esto dada la presencia de paises con variadas realidades, algunos con poblaciones muy grandes (Brasil y Argentina) y otros con poblaciones pequeñas (Ecuador y Suriname). Otro factor es las grandes diferencias en los tamaños de las economias, dato que puede tener una fuerte influencia en la cantidad de energía que se genera. Es por ello que en este trabajo se plantea como objetivo general, realizar un analisis sobre la producción de electricidad en los distintos paises de Sudamerica y tomar como caso particular a Chile, para gener un modelo para predecir la generación para los años 2015 a 2019.
+
 
 **Objetivo de investigación**
 
-- Determinar los países sudamericanos lideres en producción de electricidad según forma de generación entre los años 1991 y 2014
-- Determinar los paises sudamericanso lideres en producción de electricidad per capita entre los años 1991 y 2014
-- Generar un modelo lineal para proyectar la producción de energía años 2015-2019 usando como variables la cantidad producida y el PIB de cada país
+- Determinar los países sudamericanos lideres en producción de electricidad según forma de generación entre los años 1991 y 2014.
+- Determinar los paises sudamericanos lideres en producción de electricidad per capita entre los años 1991 y 2014.
+- Generar un modelo lineal para proyectar la producción de energía años 2015-2019 para Chile, usando como variables el tamaño de la población y el PIB.
 
 
+# Metodología
 
-## Metodología
 
-
-**Filtrar base de datos de la UNDS**
+## Filtrar base de datos de la UNDS
 
 La base de datos generada por la UNDS, "El Cuestionario", cuenta con mas de 1 millón de daos que recopilan información sobre el uso, almacenamiento, importación, generación de energía entre otras transacciónes. Esto para todos los paises del mundo entre los años 1990 y 2014. Dado el gran volumen de información es necesario focalizar el analisis en ciertos paises y transacciones. El objetivo de este trabajo esta centrado en paises sudamericanos, por ello el primer filtro aplicado es según paises dejando solo los siguientes:
 
@@ -83,14 +84,17 @@ Terajoules o Kilowatt-hour, esta ultima unidad de medida esta relacionada mas co
 
 Para poder comparar las distintas industrias de los paises sudamericanos, se agrego el tamaño poblacional de cada pais entre 1991 y 2019, esto con la finalidad de tener una visión per capita de los niveles de producción de electricidad. La base de datos de la población por años fue obtenida de la pagina del Banco Mundial (CITA). En esta misma linea se agrego el PIB y PIB per capita, para comparar teniendo en cuenta el tamaño de las distintas economias. Los datos de PIB fueron obtenidos de la CEPAL (CITA) y el dato per capita del Banco Mundial (CITA)
 
-**Análisis exploratorio**
+## Análisis exploratorio
 
-- Graficar producción total mediante distintas formas de generación de electricidad: Eolica, Solar, Termica, Hidrica y mediante combustión
-- Modelar proyección años 2015-2020 usando como variable adicional el PIB (CEPAL)
+Como punto de partida se realizo un promedio de la producción total de energía electrica para todos los paises en el ragno de tiempo (1990-2014), el cual fue expuesto en una tabla. Seguido a esto se realizó una serie de analisis exploratorios, graficando la tendencia de producción entre los años 1990 y 2014 segun distntas variables de transación. Producción electrica total, producción electrica mediante combustible fosil, producción electrica total desde energía solar, producción electrica total desde energia eolica, producción electrica total desde energía hidrica y producción electrica total desde termogeneradoras. Todas estas fuentes de producción fueron ademas calculadas dividiendo la cantidad total por el total de población para cada año según cada pais, esto genero un per capita de producción.
 
-## Resultados 
+## Modelo lineal para proyección de producción electrica para Chile
 
-**Procesamiento bases de datos**
+Se genero un modelo lineal que calculaba la cantidad de energia producida tomando como variable el PIB y la cantida de población para cada año. Luego de calculado este modelo se realizaron predicciones usando modelos de Producción total, Producción eolica y Producción mediante combustible fosil. Se incorporo como variables conocidas el PIB y tamaño poblacional entre los años 2015-2019 para asi determinar la producción (variable no conocida)
+
+# Resultados 
+
+## Procesamiento bases de datos
 
 <div style="float:left; width: 40%;">
 La base de datos de la UNDS cuenta con más de un millón de datos para los distintos países a escala mundial, es por ello que se realizó un filtro, enfocando así la investigación en países sudamericanos (13) específicamente en temas relacionados a Electricidad, dejando así un total de `r count(dataFiltered)` datos. Los resultados del filtro de los datos se exponen en la Figura \@ref(fig:esquema)
@@ -104,7 +108,9 @@ knitr::include_graphics("ImagenMyM.png")
 </div>
 
 <div style="float:left; width: 100%;">
-**Producción Total**
+
+## Producción Total
+
 </div>
 <div style="float:left; width: 100%;">
 El primer análisis exploratorio consistio en promediar la producción total de energia entre 1990 y 2014 para cada pais, los datos se exponen en la tabla \@ref(tab:Tabla1)
@@ -160,7 +166,7 @@ plotTotalMainPC
 
 ```
 
-**Produccion por combustión**
+## Produccion por combustión
 
 ```{r Figura4, fig.cap="Producción de electricidad por combustibles fosiles", eval=T, echo=F, message=FALSE, warning=FALSE, fig.align='center'}
 
@@ -196,7 +202,7 @@ plotTotalFuelPC
 ```
 
 
-**Producción total distintas fuentes**
+## Producción total distintas fuentes
 
 ```{r conf Figura 6, eval=T, echo=F, message=FALSE, warning=FALSE, fig.align='center'}
 
@@ -334,13 +340,13 @@ Figure7
 
 
 
-**Modelo**
+## Modelo
 
 Modelo lineal para estimar la producción total de electricidad ademas de la produccion mediante metodos especificos como solar, eolica, hidrica y termal.
 
 Siguiente ejemplo es un modelo inicial para produción total Solar para Chile estimando año 2015 
 
-```{r, echo=FALSE, eval=T, cache=FALSE}
+```{r Generación Modelos, echo=FALSE, eval=T, cache=FALSE}
 
 #Las bases de datos que se usaran para el modelo deberia ser dataFP mas PIB per CAPITA y PIB
 
@@ -438,47 +444,34 @@ TablapCo5 <- data.table(pCo5)
 
 TablaCo = rbind(TablapCo1, TablapCo2, TablapCo3, TablapCo4, TablapCo5)
 
-
-
 ```
 
-
 ```{r tablaMa, echo=F, eval=T, cache=FALSE}
-
-
 kable(TablaMa, caption="Proyecciones Modelo Actividad", digits = 2) %>% kable_styling(bootstrap_options = c("striped", 
     "hover", "condensed"))
-
 ```
 
 ```{r tablaVi, echo=F, eval=T, cache=FALSE}
-
-
 kable(TablaVi, caption="Proyecciones Modelo Producción Eolica", digits = 2) %>% kable_styling(bootstrap_options = c("striped", 
     "hover", "condensed"))
-
 ```
 
 ```{r tablaCo, echo=F, eval=T, cache=FALSE}
-
-
 kable(TablaCo, caption="Proyecciones Modelo Producción por combustible", digits = 2) %>% kable_styling(bootstrap_options = c("striped", 
     "hover", "condensed"))
-
-
 ```
 
 
 
-## Discusión
+# Discusión
 
 - Los mayores productores de electricidad en la región son Brasil, Venezuela y Argentina.
 - Algunas tecnologías como la producción solar o mediante viento aparecen como factor relevante bien avanzado los 2000 y solo en algunos países.
 - En el caso de la producción de energía mediante radiación solar Chile presenta un liderazgo notable con un claro aumento desde 2013.
 
-## Conclusión
+# Conclusión
 
 
 En términos de producción total de energía eléctrica Sudamérica tiene claros lideres, Brasil, Venezuela y Argentina. Pero con el cambio a la producción con energías renovables aparecen nuevos lideres como Chile en términos de generación Solar
 
-
+# Referencias
