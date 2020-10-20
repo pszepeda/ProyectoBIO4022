@@ -96,25 +96,18 @@ Se genero un modelo lineal que calculaba la cantidad de energia producida tomand
 
 ## Procesamiento bases de datos
 
-<div style="float:left; width: 40%;">
 La base de datos de la UNDS cuenta con más de un millón de datos para los distintos países a escala mundial, es por ello que se realizó un filtro, enfocando así la investigación en países sudamericanos (13) específicamente en temas relacionados a Electricidad, dejando así un total de `r count(dataFiltered)` datos. Los resultados del filtro de los datos se exponen en la Figura \@ref(fig:esquema)
-</div>
-<div style="float:center; width: 20%;">
-</div>
-<div style="float:right; width: 40%;">
-```{r esquema, fig.cap="Esquema filtro de datos", out.height="250px", out.width="300px"}
+
+
+```{r esquema, fig.cap="Esquema filtro de datos", out.height="250px", out.width="350px",fig.align='center'}
 knitr::include_graphics("ImagenMyM.png")
 ```
-</div>
-
-<div style="float:left; width: 100%;">
 
 ## Producción Total
 
-</div>
-<div style="float:left; width: 100%;">
+
 El primer análisis exploratorio consistio en promediar la producción total de energia entre 1990 y 2014 para cada pais, los datos se exponen en la tabla \@ref(tab:Tabla1)
-</div>
+
 
 ```{r confección Tabla 1, echo=F, warning= F, message=F, eval=T}
 totalMainA <- dataFiltered %>% filter(c_transaction == "Electricity - total production, main activity")
@@ -447,17 +440,26 @@ TablaCo = rbind(TablapCo1, TablapCo2, TablapCo3, TablapCo4, TablapCo5)
 ```
 
 ```{r tablaMa, echo=F, eval=T, cache=FALSE}
-kable(TablaMa, caption="Proyecciones Modelo Actividad", digits = 2) %>% kable_styling(bootstrap_options = c("striped", 
+
+
+colyears <- data.frame("Años" = c(2015, 2016, 2017, 2018, 2019))
+tabla2b = cbind(colyears,TablaMa)
+
+
+kable(tabla2b, caption="Proyecciones Modelo Actividad", digits = 2) %>% kable_styling(bootstrap_options = c("striped", 
     "hover", "condensed"))
 ```
 
 ```{r tablaVi, echo=F, eval=T, cache=FALSE}
-kable(TablaVi, caption="Proyecciones Modelo Producción Eolica", digits = 2) %>% kable_styling(bootstrap_options = c("striped", 
+tabla3b = cbind(colyears,TablaVi)
+
+kable(tabla3b, caption="Proyecciones Modelo Producción Eolica", digits = 2) %>% kable_styling(bootstrap_options = c("striped", 
     "hover", "condensed"))
 ```
 
 ```{r tablaCo, echo=F, eval=T, cache=FALSE}
-kable(TablaCo, caption="Proyecciones Modelo Producción por combustible", digits = 2) %>% kable_styling(bootstrap_options = c("striped", 
+tabla4b = cbind(colyears,TablaCo)
+kable(tabla4b, caption="Proyecciones Modelo Producción por combustible", digits = 2) %>% kable_styling(bootstrap_options = c("striped", 
     "hover", "condensed"))
 ```
 
