@@ -1,0 +1,391 @@
+Pa’s	year	PIB - million dolars
+Argentina	1990	204022,7
+Argentina	1991	225605,8
+Argentina	1992	247277,6
+Argentina	1993	261428,7
+Argentina	1994	276686,2
+Argentina	1995	268813,9
+Argentina	1996	283670,4
+Argentina	1997	306679,0
+Argentina	1998	318486,7
+Argentina	1999	307704,5
+Argentina	2000	305276,7
+Argentina	2001	291817,5
+Argentina	2002	260025,5
+Argentina	2003	283004,1
+Argentina	2004	308558,1
+Argentina	2005	335870,7
+Argentina	2006	362898,7
+Argentina	2007	395587,3
+Argentina	2008	411637,2
+Argentina	2009	387274,4
+Argentina	2010	426487,4
+Argentina	2011	452093,5
+Argentina	2012	447453,2
+Argentina	2013	458215,9
+Argentina	2014	446702,6
+Argentina	2015	458902,8
+Argentina	2016	449356,1
+Argentina	2017	462021,2
+Argentina	2018	450168,8
+Argentina	2019	440769,2
+Bolivia (Estado Plurinacional de)	1990	9312,5
+Bolivia (Estado Plurinacional de)	1991	9802,9
+Bolivia (Estado Plurinacional de)	1992	9964,3
+Bolivia (Estado Plurinacional de)	1993	10389,7
+Bolivia (Estado Plurinacional de)	1994	10874,6
+Bolivia (Estado Plurinacional de)	1995	11383,4
+Bolivia (Estado Plurinacional de)	1996	11879,9
+Bolivia (Estado Plurinacional de)	1997	12468,4
+Bolivia (Estado Plurinacional de)	1998	13095,5
+Bolivia (Estado Plurinacional de)	1999	13151,4
+Bolivia (Estado Plurinacional de)	2000	13481,2
+Bolivia (Estado Plurinacional de)	2001	13708,2
+Bolivia (Estado Plurinacional de)	2002	14048,9
+Bolivia (Estado Plurinacional de)	2003	14429,8
+Bolivia (Estado Plurinacional de)	2004	15032,0
+Bolivia (Estado Plurinacional de)	2005	15696,7
+Bolivia (Estado Plurinacional de)	2006	16449,7
+Bolivia (Estado Plurinacional de)	2007	17200,5
+Bolivia (Estado Plurinacional de)	2008	18258,0
+Bolivia (Estado Plurinacional de)	2009	18871,0
+Bolivia (Estado Plurinacional de)	2010	19649,7
+Bolivia (Estado Plurinacional de)	2011	20672,3
+Bolivia (Estado Plurinacional de)	2012	21731,2
+Bolivia (Estado Plurinacional de)	2013	23208,1
+Bolivia (Estado Plurinacional de)	2014	24475,4
+Bolivia (Estado Plurinacional de)	2015	25664,2
+Bolivia (Estado Plurinacional de)	2016	26758,5
+Bolivia (Estado Plurinacional de)	2017	27881,0
+Bolivia (Estado Plurinacional de)	2018	29058,6
+Bolivia (Estado Plurinacional de)	2019	29702,8
+Brasil	1990	1190328,8
+Brasil	1991	1202589,2
+Brasil	1992	1196095,2
+Brasil	1993	1254943,1
+Brasil	1994	1328357,2
+Brasil	1995	1384413,9
+Brasil	1996	1414185,7
+Brasil	1997	1462195,2
+Brasil	1998	1467138,8
+Brasil	1999	1474004,1
+Brasil	2000	1538682,7
+Brasil	2001	1560068,8
+Brasil	2002	1607704,9
+Brasil	2003	1626046,0
+Brasil	2004	1719705,7
+Brasil	2005	1774772,9
+Brasil	2006	1845089,2
+Brasil	2007	1957083,8
+Brasil	2008	2056781,4
+Brasil	2009	2054193,8
+Brasil	2010	2208838,1
+Brasil	2011	2296626,7
+Brasil	2012	2340748,9
+Brasil	2013	2411084,3
+Brasil	2014	2423235,1
+Brasil	2015	2337312,9
+Brasil	2016	2260744,5
+Brasil	2017	2290651,2
+Brasil	2018	2320824,2
+Brasil	2019	2347202,3
+Chile	1990	75463,4
+Chile	1991	81477,7
+Chile	1992	91481,6
+Chile	1993	97872,7
+Chile	1994	103459,4
+Chile	1995	114454,7
+Chile	1996	122939,8
+Chile	1997	132071,6
+Chile	1998	137783,1
+Chile	1999	137215,3
+Chile	2000	144524,7
+Chile	2001	149298,4
+Chile	2002	153937,1
+Chile	2003	160234,7
+Chile	2004	171786,9
+Chile	2005	181652,3
+Chile	2006	193127,6
+Chile	2007	202601,2
+Chile	2008	209752,1
+Chile	2009	206471,0
+Chile	2010	218537,6
+Chile	2011	231892,2
+Chile	2012	244225,7
+Chile	2013	254104,6
+Chile	2014	258594,0
+Chile	2015	264551,4
+Chile	2016	269078,1
+Chile	2017	272276,3
+Chile	2018	283029,4
+Chile	2019	286013,8
+Colombia	1990	147562,1
+Colombia	1991	151062,2
+Colombia	1992	157638,3
+Colombia	1993	166639,7
+Colombia	1994	175217,2
+Colombia	1995	184332,8
+Colombia	1996	188122,4
+Colombia	1997	194575,6
+Colombia	1998	195684,2
+Colombia	1999	187457,6
+Colombia	2000	192940,5
+Colombia	2001	196177,9
+Colombia	2002	201090,1
+Colombia	2003	208969,4
+Colombia	2004	220113,8
+Colombia	2005	230473,5
+Colombia	2006	245954,2
+Colombia	2007	262527,0
+Colombia	2008	271147,0
+Colombia	2009	274237,1
+Colombia	2010	286563,1
+Colombia	2011	306473,2
+Colombia	2012	318464,4
+Colombia	2013	334814,3
+Colombia	2014	349877,7
+Colombia	2015	360219,8
+Colombia	2016	367738,9
+Colombia	2017	372737,8
+Colombia	2018	382113,4
+Colombia	2019	394571,1
+Ecuador	1990	38020,9
+Ecuador	1991	39652,5
+Ecuador	1992	40490,9
+Ecuador	1993	41289,8
+Ecuador	1994	43048,0
+Ecuador	1995	44017,7
+Ecuador	1996	44780,0
+Ecuador	1997	46718,0
+Ecuador	1998	48244,1
+Ecuador	1999	45957,6
+Ecuador	2000	46459,4
+Ecuador	2001	48325,0
+Ecuador	2002	50304,8
+Ecuador	2003	51674,5
+Ecuador	2004	55917,5
+Ecuador	2005	58876,3
+Ecuador	2006	61468,9
+Ecuador	2007	62815,1
+Ecuador	2008	66808,4
+Ecuador	2009	67186,8
+Ecuador	2010	69555,4
+Ecuador	2011	75028,1
+Ecuador	2012	79261,1
+Ecuador	2013	83181,8
+Ecuador	2014	86333,4
+Ecuador	2015	86418,8
+Ecuador	2016	85359,0
+Ecuador	2017	87380,6
+Ecuador	2018	88507,2
+Ecuador	2019	88554,7
+Guyana	1990	1681,6
+Guyana	1991	1782,4
+Guyana	1992	1920,7
+Guyana	1993	2078,2
+Guyana	1994	2264,6
+Guyana	1995	2368,4
+Guyana	1996	2554,8
+Guyana	1997	2714,8
+Guyana	1998	2678,9
+Guyana	1999	2748,3
+Guyana	2000	2728,0
+Guyana	2001	2772,6
+Guyana	2002	2804,0
+Guyana	2003	2786,3
+Guyana	2004	2829,8
+Guyana	2005	2774,6
+Guyana	2006	2916,9
+Guyana	2007	3126,7
+Guyana	2008	3181,6
+Guyana	2009	3296,5
+Guyana	2010	3432,9
+Guyana	2011	3611,3
+Guyana	2012	3801,8
+Guyana	2013	3940,7
+Guyana	2014	4007,2
+Guyana	2015	4034,7
+Guyana	2016	4188,4
+Guyana	2017	4344,8
+Guyana	2018	4537,7
+Guyana	2019	4780,6
+Paraguay	1990	15072,4
+Paraguay	1991	15444,5
+Paraguay	1992	15706,5
+Paraguay	1993	16481,8
+Paraguay	1994	17358,3
+Paraguay	1995	18542,6
+Paraguay	1996	18834,4
+Paraguay	1997	19633,5
+Paraguay	1998	19646,8
+Paraguay	1999	19378,5
+Paraguay	2000	18930,0
+Paraguay	2001	18772,1
+Paraguay	2002	18768,1
+Paraguay	2003	19579,0
+Paraguay	2004	20373,4
+Paraguay	2005	20808,1
+Paraguay	2006	21808,4
+Paraguay	2007	22990,7
+Paraguay	2008	24452,7
+Paraguay	2009	24389,7
+Paraguay	2010	27107,6
+Paraguay	2011	28259,4
+Paraguay	2012	28107,2
+Paraguay	2013	30473,1
+Paraguay	2014	31954,4
+Paraguay	2015	32938,7
+Paraguay	2016	34359,3
+Paraguay	2017	36061,4
+Paraguay	2018	37271,7
+Paraguay	2019	37260,6
+Perœ	1990	58090,4
+Perœ	1991	59724,4
+Perœ	1992	59468,3
+Perœ	1993	62302,0
+Perœ	1994	70290,1
+Perœ	1995	75499,6
+Perœ	1996	77612,8
+Perœ	1997	82639,7
+Perœ	1998	82316,1
+Perœ	1999	83546,6
+Perœ	2000	85797,7
+Perœ	2001	86327,8
+Perœ	2002	91035,8
+Perœ	2003	94827,4
+Perœ	2004	99529,2
+Perœ	2005	105784,6
+Perœ	2006	113749,0
+Perœ	2007	123438,6
+Perœ	2008	134704,3
+Perœ	2009	136180,5
+Perœ	2010	147527,6
+Perœ	2011	156862,0
+Perœ	2012	166492,9
+Perœ	2013	176236,9
+Perœ	2014	180435,1
+Perœ	2015	186303,3
+Perœ	2016	193668,5
+Perœ	2017	198546,7
+Perœ	2018	206442,8
+Perœ	2019	210881,6
+Suriname	1990	2571,1
+Suriname	1991	2632,5
+Suriname	1992	2654,0
+Suriname	1993	2513,5
+Suriname	1994	2429,5
+Suriname	1995	2496,9
+Suriname	1996	2524,3
+Suriname	1997	2580,9
+Suriname	1998	2660,6
+Suriname	1999	2596,5
+Suriname	2000	2646,5
+Suriname	2001	2798,1
+Suriname	2002	2873,9
+Suriname	2003	3070,2
+Suriname	2004	3086,8
+Suriname	2005	3307,8
+Suriname	2006	3683,5
+Suriname	2007	3871,7
+Suriname	2008	4032,2
+Suriname	2009	4153,7
+Suriname	2010	4368,4
+Suriname	2011	4623,9
+Suriname	2012	4748,3
+Suriname	2013	4887,6
+Suriname	2014	4900,1
+Suriname	2015	4732,9
+Suriname	2016	4469,7
+Suriname	2017	4548,5
+Suriname	2018	4667,6
+Suriname	2019	4759,7
+Trinidad y Tabago	1990	8067,6
+Trinidad y Tabago	1991	8284,0
+Trinidad y Tabago	1992	8147,6
+Trinidad y Tabago	1993	8029,2
+Trinidad y Tabago	1994	8315,5
+Trinidad y Tabago	1995	8644,4
+Trinidad y Tabago	1996	9261,1
+Trinidad y Tabago	1997	9957,8
+Trinidad y Tabago	1998	10766,9
+Trinidad y Tabago	1999	11630,9
+Trinidad y Tabago	2000	12433,6
+Trinidad y Tabago	2001	12951,9
+Trinidad y Tabago	2002	13979,8
+Trinidad y Tabago	2003	15998,6
+Trinidad y Tabago	2004	17270,5
+Trinidad y Tabago	2005	18342,9
+Trinidad y Tabago	2006	20765,6
+Trinidad y Tabago	2007	21752,8
+Trinidad y Tabago	2008	22490,6
+Trinidad y Tabago	2009	21502,9
+Trinidad y Tabago	2010	22217,5
+Trinidad y Tabago	2011	22152,1
+Trinidad y Tabago	2012	22438,7
+Trinidad y Tabago	2013	22938,9
+Trinidad y Tabago	2014	22729,6
+Trinidad y Tabago	2015	23144,0
+Trinidad y Tabago	2016	21686,8
+Trinidad y Tabago	2017	21185,3
+Trinidad y Tabago	2018	21133,4
+Trinidad y Tabago	2019	21048,8
+Uruguay	1990	22100,9
+Uruguay	1991	22883,0
+Uruguay	1992	24698,0
+Uruguay	1993	25354,4
+Uruguay	1994	27200,5
+Uruguay	1995	26806,8
+Uruguay	1996	28302,0
+Uruguay	1997	29730,6
+Uruguay	1998	31074,1
+Uruguay	1999	30471,6
+Uruguay	2000	29883,5
+Uruguay	2001	28734,7
+Uruguay	2002	26512,9
+Uruguay	2003	26726,4
+Uruguay	2004	28063,9
+Uruguay	2005	30157,5
+Uruguay	2006	31393,5
+Uruguay	2007	33447,1
+Uruguay	2008	35847,3
+Uruguay	2009	37368,5
+Uruguay	2010	40284,5
+Uruguay	2011	42364,1
+Uruguay	2012	43863,0
+Uruguay	2013	45897,2
+Uruguay	2014	47383,7
+Uruguay	2015	47559,3
+Uruguay	2016	48363,0
+Uruguay	2017	49616,2
+Uruguay	2018	50420,1
+Uruguay	2019	50532,1
+Venezuela (Repœblica Bolivariana de)	1990	170465,7
+Venezuela (Repœblica Bolivariana de)	1991	187051,9
+Venezuela (Repœblica Bolivariana de)	1992	198388,1
+Venezuela (Repœblica Bolivariana de)	1993	198934,4
+Venezuela (Repœblica Bolivariana de)	1994	194260,5
+Venezuela (Repœblica Bolivariana de)	1995	201937,0
+Venezuela (Repœblica Bolivariana de)	1996	201537,5
+Venezuela (Repœblica Bolivariana de)	1997	214377,3
+Venezuela (Repœblica Bolivariana de)	1998	215007,7
+Venezuela (Repœblica Bolivariana de)	1999	202170,7
+Venezuela (Repœblica Bolivariana de)	2000	209624,6
+Venezuela (Repœblica Bolivariana de)	2001	216739,8
+Venezuela (Repœblica Bolivariana de)	2002	197546,1
+Venezuela (Repœblica Bolivariana de)	2003	182225,8
+Venezuela (Repœblica Bolivariana de)	2004	215549,0
+Venezuela (Repœblica Bolivariana de)	2005	237788,8
+Venezuela (Repœblica Bolivariana de)	2006	261263,7
+Venezuela (Repœblica Bolivariana de)	2007	284133,6
+Venezuela (Repœblica Bolivariana de)	2008	299129,8
+Venezuela (Repœblica Bolivariana de)	2009	289550,8
+Venezuela (Repœblica Bolivariana de)	2010	285239,9
+Venezuela (Repœblica Bolivariana de)	2011	297152,8
+Venezuela (Repœblica Bolivariana de)	2012	313870,5
+Venezuela (Repœblica Bolivariana de)	2013	318086,0
+Venezuela (Repœblica Bolivariana de)	2014	305698,5
+Venezuela (Repœblica Bolivariana de)	2015	286679,9
+Venezuela (Repœblica Bolivariana de)	2016	237828,7
+Venezuela (Repœblica Bolivariana de)	2017	200557,6
+Venezuela (Repœblica Bolivariana de)	2018	161205,3
+Venezuela (Repœblica Bolivariana de)	2019	120097,9
