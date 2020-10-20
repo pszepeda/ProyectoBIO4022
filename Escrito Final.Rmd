@@ -60,13 +60,13 @@ El cambio climático ha impulsado la necesidad de cambiar la forma en que se gen
 
 Para poder abordar esta problemática la información es vital, es por ello que el trabajo realizado por la división de estadística de las Naciones Unidas (UNDS por sus siglas en inglés) surge como una buena herramienta para monitorear como los distintos países se relacionan con la energía. La UNDS, todos los años genera un base de datos donde registra distintas transacciones energéticas generadas por los países del mundo. Entre estas transacciones podemos encontrar, generación, almacenamiento, importación, exportación, de distintas formas de energía como solar, mareomotriz, termoeléctrica, entre otras. Esta recopilación se le denomina "El cuestionario" [@Globalenergytrade].
 
-Para realizar un análisis exploratorio de esta base de datos un punto de partida es acotar la información. Un buen objeto de estudio es Sudamérica, esto dada la presencia de países con variadas realidades, algunos con poblaciones muy grandes (Brasil y Argentina) y otros con poblaciones pequeñas (Ecuador y Surinam). Otro factor es las grandes diferencias en los tamaños de las economías, dato que puede tener una fuerte influencia en la cantidad de energía que se genera. Es por ello que en este trabajo se plantea como objetivo general, realizar un análisis sobre la producción de electricidad en los distintos países de Sudamérica y tomar como caso particular a Chile, para generar un modelo para predecir la generación para los años 2015 a 2019.
+Para realizar un análisis exploratorio de esta base de datos un punto de partida es acotar la información. Un buen objeto de estudio es Sudamérica, esto dada la presencia de países con variadas realidades, algunos con poblaciones muy grandes (Brasil y Argentina) y otros con poblaciones pequeñas (Ecuador y Surinam). Otro factor es las grandes diferencias en los tamaños de las economías, dato que puede tener una fuerte influencia en la cantidad de energía que se genera. Es por ello que en este trabajo se plantea como objetivo general, realizar un análisis sobre la producción de electricidad en los distintos países de Sudamérica y tomar como caso particular a Chile, para generar un modelo para predecir la producción de electricidad para los años 2015 a 2019.
 
 **Objetivo de investigación**
 
-- Determinar los países sudamericanos líderes en producción de electricidad según forma de generación entre los años 1991 y 2014.
-- Determinar los países sudamericanos líderes en producción de electricidad per cápita entre los años 1991 y 2014.
-- Generar un modelo lineal para proyectar la producción de energía años 2015-2019 para Chile, usando como variables el tamaño de la población y el PIB.
+- Determinar los países sudamericanos líderes en producción de electricidad según forma de generación entre los años 1990 y 2014.
+- Determinar los países sudamericanos líderes en producción de electricidad per cápita entre los años 1990 y 2014.
+- Generar un modelo lineal para proyectar la producción de energía entre los años 2015-2019 para Chile, usando como variables el tamaño de la población y el PIB.
 
 # Metodología
 
@@ -79,7 +79,7 @@ Argentina, Bolivia, Brasil, Chile, Colombia, Ecuador, Guyana, Paraguay, Perú, S
 
 Luego el siguiente filtro está en el tipo de energía, en este caso eléctrica, para evaluar solo transacciones de este tipo de energía se seleccionó según "unidad", en "El cuestionario" hay datos con distintas unidades como Toneladas métricas, Terajoules o Kilowatt-hour, esta última unidad de medida esta relacionada más con generación eléctrica por lo que se usó como filtro para este encontrar este tipo de transacciones.
 
-Para poder comparar las distintas industrias de los países sudamericanos, se agregó el tamaño poblacional de cada país entre 1991 y 2019, esto con la finalidad de tener una visión per cápita de los niveles de producción de electricidad. La base de datos de la población por años fue obtenida de la página del Banco Mundial [@WorldBank]. En esta misma línea se agregó el PIB y PIB per cápita, para comparar teniendo en cuenta el tamaño de las distintas economías. Los datos de PIB y PIB per cápita fueron obtenidos del Banco Mundial [@WorldBank].
+Para poder comparar las distintas industrias de los países sudamericanos, se agregó el tamaño poblacional de cada país entre 1990 y 2019, esto con la finalidad de tener una visión per cápita de los niveles de producción de electricidad. La base de datos de la población por años fue obtenida de la página del Banco Mundial [@WorldBank]. En esta misma línea se agregó el PIB y PIB per cápita, para comparar teniendo en cuenta el tamaño de las distintas economías. Los datos de PIB y PIB per cápita fueron obtenidos del Banco Mundial [@WorldBank].
 
 ## Análisis exploratorio
 
@@ -134,7 +134,7 @@ plotTotalMainA
 
 ```
 
-Sudamérica es un continente que alberga países con distintas realidades, es así como brasil se empina entre los más poblados del mundo pero en el otro extremo hay países con escasa población. Es por esto que se estandarizó la producción total por la cantidad de habitantes como se detalla en la metodología. Estos datos se muestran en la figura \@ref(fig:Figura3). Con este análisis se puede ver que el panorama en la región cambia, y podemos ver que Paraguay es el país sudamericano que más electricidad produce por habitante, seguido por una país pequeño como lo es Trinidad y Tobago. Brasil por su parte es relegado a una séptima posición.
+Sudamérica es un continente que alberga países con distintas realidades, es así como Brasil se empina entre los más poblados del mundo pero en el otro extremo hay países con escasa población. Es por esto que se estandarizó la producción total por la cantidad de habitantes como se detalla en la metodología. Estos datos se muestran en la figura \@ref(fig:Figura3). Con este análisis se puede ver que el panorama en la región cambia, y podemos ver que Paraguay es el país sudamericano que más electricidad produce por habitante, seguido por una país pequeño como lo es Trinidad y Tobago. Brasil por su parte es relegado a una séptima posición.
 
 ```{r Figura3, fig.cap= "Producción total de electricidad per capita", warning=F, fig.align='center'}
 
